@@ -1,10 +1,10 @@
 name: demo-actions
 
 on: 
- # push:
-   # branches: main
-  issues: 
-    types: opened 
+ push:
+   branches: main
+ # issues: 
+   # types: opened 
 
 jobs:
   build: 
@@ -14,3 +14,11 @@ jobs:
       
       - name: run a sample job 
         run: echo "Hello World"
+
+      - name: upload artifcat
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-artifact
+          path: ${{github.workspace}}
+          
+        
