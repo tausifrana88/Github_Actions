@@ -1,0 +1,14 @@
+name: demo-actions
+
+on: 
+  push:
+    branches: main
+
+jobs:
+  build: 
+    runs-on: mac-latest
+    steps: 
+      - uses: actions/checkout@v4
+      
+      - name: run a sample job 
+        run: echo "Hello World"
